@@ -1,0 +1,267 @@
+<ImageWidget>:
+	source: 'img/img.jpg'
+
+<CustomDropDown>
+	Button:
+		text: 'Трек №1  «Райли»'
+		size_hint_y: None
+		height: 44
+		on_release: root.select('Трек №1  «Райли»')
+	Button:
+		text: 'Трек №2  «1-я комната»'
+		size_hint_y: None
+		height: 44
+		on_release: root.select('Трек №2  «1-я комната»')
+	Button:
+		text: 'Трек №3  «2-я комната»'
+		size_hint_y: None
+		height: 44
+		on_release: root.select('Трек №3  «2-я комната»')
+	Button:
+		text: 'Трек №4  «3-я комната»'
+		size_hint_y: None
+		height: 44
+		on_release: root.select('Трек №4  «3-я комната»')
+	Button:
+		text: 'Трек №5  «Сигнализация»'
+		size_hint_y: None
+		height: 44
+		on_release: root.select('Трек №5  «Сигнализация»')
+	Button:
+		text: 'Трек №6  «Побег»'
+		size_hint_y: None
+		height: 44
+		on_release: root.select('Трек №6  «Побег»')
+	Button:
+		text: 'Трек №7  «Победа»'
+		size_hint_y: None
+		height: 44
+		on_release: root.select('Трек №7  «Победа»')
+	Button:
+		text: 'Трек №8  «Поражение»'
+		size_hint_y: None
+		height: 44
+		on_release: root.select('Трек №8  «Поражение»')
+	Button:
+		text: 'Трек №9  «Alarm»'
+		size_hint_y: None
+		height: 44
+		on_release: root.select('Трек №9  «Alarm»')
+	
+
+<Tab>:
+	bt_songs: bt_songs
+
+	do_default_tab: False
+
+	TabbedPanelItem:
+		text: "Квест"
+
+		BoxLayout:
+			orientation: 'vertical'
+			spacing: 30
+
+			BoxLayout:
+				size_hint_y: 0.1
+				orientation: 'horizontal'
+				padding: 15, 15, 15, 0
+				spacing: 15
+
+				Button:
+					text: 'Init quest'
+
+				Button:
+					text: 'Test quest'
+
+				Label:
+					text: 'Квест не собран'
+
+				Button:
+					text: 'Run quest'
+
+			GridLayout:
+				rows: 5
+				size_hint_y: 0.55
+				padding: 15
+				spacing: 15
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Свет в коридоре'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Свет в 1-й комнате'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Шкатулка'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Декларация'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Подсветка кирпича'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Камни/ниша'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Проход 2-ю комнату (свет)'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Левый ящик комода'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Ящик стола'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Правый ящик комода'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Проход в 3-ю комнату'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'Лаз'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: 'ЭМ входа'
+					BoxLayout:
+						Button:
+							text: 'On'
+						Button:
+							text: 'Off'
+
+			BoxLayout:
+				orientation: 'horizontal'
+				size_hint_y: 0.25
+				padding: 15
+				spacing: 15
+
+				BoxLayout:
+					orientation: 'vertical'
+					size_hint_x: 0.6
+					spacing: 15
+
+					Button:
+						id: bt_songs
+						text: 'Трек №1  «Райли»'
+						on_release: root.open_dd()
+
+					BoxLayout:
+						orientation: 'horizontal'
+						spacing: 10
+
+						Button:
+							text: 'play'
+
+						Button:
+							text: 'pause'
+
+						Button:
+							text: 'stop'
+
+				Button:
+					text: 'Alarm'
+					size_hint_x: 0.3
+
+				Slider:
+					orientation: 'vertical'
+					size_hint_x: 0.1
+
+			BoxLayout:
+				orientation: 'vertical'
+				size_hint_y: 0.1
+				padding: 60, 15, 60, 15
+				spacing: 15
+
+				Label:
+					text: 'Времени квеста прошло'
+
+				ProgressBar:
+
+	TabbedPanelItem:
+		text: "Прочее"
