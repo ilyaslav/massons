@@ -176,7 +176,7 @@ def stop_music(music):
 	gs.send_message(f'stop{track};')
 
 def change_volume():
-	gs.send_message(f'volume{settings["volume"]};')
+	gs.send_message(f'volume{int(settings["volume"])};')
 
 def reset_out(message):
 	if outs[message]:

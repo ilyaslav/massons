@@ -1,4 +1,3 @@
-#import RPi.GPIO as GPIO
 import socket
 import threading
 
@@ -56,14 +55,5 @@ class Client:
 			except:
 				self.server.pop()
 
-	def set_default_settings(self):
-		pass
-
 	def messageHandler(self, message):
 		print(message)
-
-if __name__ == "__main__":
-	client = Client()
-	threading.Thread(target=client.clientFunction, daemon=True).start()
-	while True:
-		client.send_message(input())
