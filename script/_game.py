@@ -165,6 +165,7 @@ def chouse_track(music):
 
 def play_music(music):
 	track = chouse_track(music)
+	print(f'play{track};')
 	gs.send_message(f'play{track};')
 
 def pause_music(music):

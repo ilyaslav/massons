@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import time
 
 class PiHandler():
 	def __init__(self):
@@ -109,7 +110,7 @@ class PiHandler():
 			except:
 				pass
 
-	def initGPIO():
+	def initGPIO(self):
 		GPIO.setmode(GPIO.BOARD)
 
 		GPIO.setup(3, GPIO.IN, pull_up_down = GPIO.PUD_UP)

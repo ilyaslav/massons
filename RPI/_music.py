@@ -18,7 +18,7 @@ class Music():
 
 		self.mix = alsaaudio.Mixer()
 
-	def change_volume(vol):
+	def change_volume(self, vol):
 		self.mix.setvolume(vol)
 
 	def play(self, track):

@@ -1,12 +1,9 @@
 from _client import Client
 from _gpio import PiHandler
 from _music import Music
+import threading
 
-gc = GameClient()
-gh = GameHandler()
-gm = Music()
-
-class GameHandler(_gpio.PiHandler):
+class GameHandler(PiHandler):
 	def __init__(self, *args, **kwargs):
 		super().__init__(**kwargs)
 
@@ -60,7 +57,7 @@ class GameHandler(_gpio.PiHandler):
 		gc.send_message('play0;')
 
 
-class GameClient(Server):
+class GameClient(Client):
 	def __init__(self, *args, **kwargs):
 		super().__init__(**kwargs)
 
@@ -120,18 +117,23 @@ class GameClient(Server):
 			gh.input0()
 
 		elif mes[:4] == 'play':
-			gm.play(int(mes[:4]))
+			gm.play(int(mes[4:]))
 		elif mes[:4] == 'stop':
-			gm.stop(int(mes[:4]))
+			gm.stop(int(mes[4:]))
 		elif mes[:5] == 'pause':
-			gm.pause(int(mes[:5]))
+			gm.pause(int(mes[5:]))
 		elif mes[:6] == 'volume':
 			gm.change_volume(int(mes[6:]))
 
 
+gc = GameClient()
+gh = GameHandler()
+gm = Music()
+
+
 def main():
 	threading.Thread(target=gc.clientFunction, daemon=True).start()
-	gh.sensor_loop()
+	gh.sensors_loop()
 
 
 if __name__ == '__main__':
