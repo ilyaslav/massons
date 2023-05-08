@@ -1,3 +1,12 @@
+from kivy.config import Config
+Config.set('input', 'mouse', 'mouse,disable_multitouch')
+Config.set('graphics', 'height', '900')
+Config.set('graphics', 'width', '1200')
+Config.set('graphics', 'window_state', 'maximized')
+Config.set('graphics', 'fullscreen', '0')
+Config.set('graphics', 'resizable', '1')
+Config.write()
+
 from kivy.app import App
 
 from kivy.uix.button import Button
@@ -7,7 +16,6 @@ from kivy.uix.image import Image
 from kivy.uix.dropdown import DropDown
 from kivy.uix.label import Label
 
-from kivy.config import Config
 from kivy.core.window import Window
 from kivy.clock import Clock
 from functools import partial
@@ -480,13 +488,6 @@ class CustomDropDown(DropDown):
 
 
 def main():
-	Config.set('input', 'mouse', 'mouse,disable_multitouch')
-	Config.set('graphics', 'height', '900')
-	Config.set('graphics', 'width', '1200')
-	Config.set('graphics', 'window_state', 'maximized')
-	Config.set('graphics', 'fullscreen', '0')
-	Config.set('graphics', 'resizable', '1')
-	Config.write()
 	MassonsApp().run()
 
 if __name__ == '__main__':
