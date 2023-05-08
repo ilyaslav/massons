@@ -33,8 +33,6 @@ class MassonsApp(App):
 	def main_loop(self, dt):
 		if _game.settings['questStatus'] == 4:
 			self.ow.timer_on.cancel()
-			self.ow.change_quest_state_text()
-			self.ow.change_quest_state_color()
 			self.ow.bt_initQuest.disabled = False
 
 		if _game.settings['initSensors']:
@@ -44,12 +42,8 @@ class MassonsApp(App):
 
 		if not _game.check() and not _game.settings['gameStatus'] and _game.settings['questStatus'] != 4:
 			_game.settings['questStatus'] = 1
-			self.ow.change_quest_state_text()
-			self.ow.change_quest_state_color()
 		elif _game.check() and not _game.settings['gameStatus'] and _game.settings['questStatus'] != 4:
 			_game.settings['questStatus'] = 2
-			self.ow.change_quest_state_text()
-			self.ow.change_quest_state_color()
 
 		if _game.outs['brick'] and _game.settings['brick_event']:
 			_game.settings['brick_event'] = False
@@ -61,7 +55,6 @@ class MassonsApp(App):
 			Clock.schedule_once(partial(_game.playersEvent_script, 2), 20)
 
 		if _game.settings['startStatus']:
-			print('start game')
 			_game.settings['startStatus'] = False
 			_game.settings['gameStatus'] = not _game.settings['gameStatus']
 
@@ -74,8 +67,8 @@ class MassonsApp(App):
 				_game.settings['questStatus'] = 4
 				self.ow.timer_on.cancel()
 	
-			self.ow.change_quest_state_color()
-			self.ow.change_quest_state_text()
+		self.ow.change_quest_state_text()
+		self.ow.change_quest_state_color()
 
 	def start(self, dt):
 		Clock.schedule_interval(self.main_loop, 0.1)
@@ -490,7 +483,9 @@ def main():
 	Config.set('input', 'mouse', 'mouse,disable_multitouch')
 	Config.set('graphics', 'height', '900')
 	Config.set('graphics', 'width', '1200')
-	Config.set('graphics', 'resizable', '0')
+	Config.set('graphics', 'window_state', 'maximized')
+	Config.set('graphics', 'fullscreen', '0')
+	Config.set('graphics', 'resizable', '1')
 	Config.write()
 	MassonsApp().run()
 

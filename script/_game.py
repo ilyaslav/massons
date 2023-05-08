@@ -8,7 +8,6 @@ class GameServer(Server):
 		super().__init__(**kwargs)
 
 	def message_handler(self, mes):
-		print(mes)
 		if mes == 'quest1':
 			inputs['runQuest'] = True
 			if not settings['gameStatus']:
@@ -165,7 +164,6 @@ def chouse_track(music):
 
 def play_music(music):
 	track = chouse_track(music)
-	print(f'play{track};')
 	gs.send_message(f'play{track};')
 
 def pause_music(music):
@@ -193,7 +191,6 @@ def start_timer():
 def stop_timer():
 	if time.time() - settings['start_time'] > 2 and time.time() - settings['start_time'] < 5:
 		settings['startStatus'] = True
-		print(time.time() - settings['start_time'])
 	settings['timer'] = False
 
 def start_script():
@@ -265,14 +262,12 @@ def playersEvent_script(type, dt):
 
 def win_script():
 	if not inputs['doorRead'] and outs['room3']:
-		print('win')
 		settings['questStatus'] = 4
 		settings['gameStatus'] = False
 		stop_music('Трек №6  «Побег»')
 		play_music('Трек №7  «Победа»')
 
 def louse_script():
-	print('louse')
 	settings['gameStatus'] = False
 	outs['input'] = True
 	reset_out('input')

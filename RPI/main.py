@@ -10,7 +10,7 @@ class GameHandler(PiHandler):
 	def runQuest1(self):
 		gc.send_message('quest1;')
 	def runQuest0(self):
-		gc.send_message('quest1;')
+		gc.send_message('quest0;')
 	def doorRead1(self):
 		gc.send_message('door1;')
 	def doorRead0(self):

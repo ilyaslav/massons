@@ -57,50 +57,50 @@ class PiHandler():
 					else:
 						self.declarationRead1()
 
-				if GPIO.input(13) != self.inputs['brickRead']:
-					self.inputs['brickRead'] = GPIO.input(13)
+				if GPIO.input(15) != self.inputs['brickRead']:
+					self.inputs['brickRead'] = GPIO.input(15)
 					if self.inputs['brickRead']:
 						self.brickRead0()
 					else:
 						self.brickRead1()
 
-				if GPIO.input(13) != self.inputs['handRead']:
-					self.inputs['handRead'] = GPIO.input(13)
+				if GPIO.input(19) != self.inputs['handRead']:
+					self.inputs['handRead'] = GPIO.input(19)
 					if self.inputs['handRead']:
 						self.handRead0()
 					else:
 						self.handRead1()
 
-				if GPIO.input(13) != self.inputs['cupRead']:
-					self.inputs['cupRead'] = GPIO.input(13)
+				if GPIO.input(21) != self.inputs['cupRead']:
+					self.inputs['cupRead'] = GPIO.input(21)
 					if self.inputs['cupRead']:
 						self.cupRead0()
 					else:
 						self.cupRead1()
 
-				if GPIO.input(13) != self.inputs['tableRead']:
-					self.inputs['tableRead'] = GPIO.input(13)
+				if GPIO.input(23) != self.inputs['tableRead']:
+					self.inputs['tableRead'] = GPIO.input(23)
 					if self.inputs['tableRead']:
 						self.tableRead0()
 					else:
 						self.tableRead1()
 
-				if GPIO.input(13) != self.inputs['presidentRead']:
-					self.inputs['presidentRead'] = GPIO.input(13)
+				if GPIO.input(29) != self.inputs['presidentRead']:
+					self.inputs['presidentRead'] = GPIO.input(29)
 					if self.inputs['presidentRead']:
 						self.presidentRead0()
 					else:
 						self.presidentRead1()
 
-				if GPIO.input(13) != self.inputs['ringRead']:
-					self.inputs['ringRead'] = GPIO.input(13)
+				if GPIO.input(31) != self.inputs['ringRead']:
+					self.inputs['ringRead'] = GPIO.input(31)
 					if self.inputs['ringRead']:
 						self.ringRead0()
 					else:
 						self.ringRead1()
 
-				if GPIO.input(13) != self.inputs['playersRead']:
-					self.inputs['playersRead'] = GPIO.input(13)
+				if GPIO.input(33) != self.inputs['playersRead']:
+					self.inputs['playersRead'] = GPIO.input(33)
 					if self.inputs['playersRead']:
 						self.playersRead0()
 					else:

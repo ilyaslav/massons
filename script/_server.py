@@ -17,8 +17,6 @@ class Server():
 					conn, addr = s.accept()
 					with conn:
 						self.connection.append(conn)
-						print(f"Connected by {addr}")
-						print(self.connection)
 			
 						while True:
 							data = conn.recv(1024).decode('utf-8')
@@ -31,11 +29,9 @@ class Server():
 
 
 				except TimeoutError as e:
-					print(e)
 					continue
 			
 				except OSError as e:
-					print(e)
 					self.connection.pop()
 
 	def message_handler(self, mes):
