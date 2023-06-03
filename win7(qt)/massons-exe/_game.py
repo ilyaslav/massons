@@ -126,6 +126,23 @@ outs = {
 	'input': False,
 }
 
+def init_outs():
+	for i in outs:
+		outs[i] = False
+	reset_out('hallway')
+	reset_out('room1')
+	reset_out('coin')
+	reset_out('declaration')
+	reset_out('brick')
+	reset_out('stones')
+	reset_out('room2')
+	reset_out('left')
+	reset_out('table')
+	reset_out('right')
+	reset_out('room3')
+	reset_out('under')
+	reset_out('input')
+
 def check_sensors():
 	for i in inputs:
 		if inputs[i]:

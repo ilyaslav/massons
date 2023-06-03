@@ -4,7 +4,7 @@ class Server():
 	def __init__(self):
 		self.connection = []
 		self.messenges = []
-		self.HOST = socket.gethostbyname(socket.gethostname())
+		self.HOST = '192.168.0.102'
 		print(self.HOST)
 		self.PORT = 1112
 

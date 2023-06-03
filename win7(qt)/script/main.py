@@ -40,6 +40,7 @@ class ThreadClass(QThread):
 class Ui(object):
         def setupUi(self, MainWindow):
                 MainWindow.setObjectName("MainWindow")
+                MainWindow.setWindowIcon(QtGui.QIcon('img/massons.ico'))
                 MainWindow.resize(1200, 900)
                 MainWindow.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";")
                 self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -451,7 +452,7 @@ class Ui(object):
                         self.green_sensor(self.players)
                 else:
                         self.red_sensor(self.players)
-                _game.initSensors = False
+                _game.settings['initSensors'] = False
 
         def reset_sensors(self):
                 if _game.inputs['runQuest']:

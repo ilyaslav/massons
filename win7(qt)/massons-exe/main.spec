@@ -26,7 +26,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='main',
+    name='massons',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -41,12 +41,12 @@ exe = EXE(
 )
 coll = COLLECT(
     exe,
-    Tree('C:\\Users\\ilyadlav\\qtgui\\massons\\'),
+    Tree('C:\\Users\\ILYASLAV\\qt\\script\\'),
     a.binaries,
     a.zipfiles,
     a.datas,
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='main',
+    name='massons',
 )
