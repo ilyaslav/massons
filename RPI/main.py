@@ -79,9 +79,9 @@ class GameClient(Client):
 		elif mes == 'left1':
 			gh.left1()
 		elif mes == 'table1':
-			gh.hallway1()
-		elif mes == 'right1':
 			gh.table1()
+		elif mes == 'right1':
+			gh.right1()
 		elif mes == 'room31':
 			gh.room31()
 		elif mes == 'under1':
@@ -91,7 +91,7 @@ class GameClient(Client):
 
 		if mes == 'hallway0':
 			gh.hallway0()
-		elif mes == 'room1':
+		elif mes == 'room10':
 			gh.room10()
 		elif mes == 'coin0':
 			gh.coin0()
@@ -106,9 +106,9 @@ class GameClient(Client):
 		elif mes == 'left0':
 			gh.left0()
 		elif mes == 'table0':
-			gh.hallway0()
-		elif mes == 'right0':
 			gh.table0()
+		elif mes == 'right0':
+			gh.right0()
 		elif mes == 'room30':
 			gh.room30()
 		elif mes == 'under0':

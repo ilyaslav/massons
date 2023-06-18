@@ -3,15 +3,15 @@ import alsaaudio
 
 class Music():
 	def __init__(self):
-		self.ap1 = AudioPlayer('mp3/1.mp3')
-		self.ap2 = AudioPlayer('mp3/2.mp3')
-		self.ap3 = AudioPlayer('mp3/3.mp3')
-		self.ap4 = AudioPlayer('mp3/4.mp3')
-		self.ap5 = AudioPlayer('mp3/5.mp3')
-		self.ap6 = AudioPlayer('mp3/6.mp3')
-		self.ap7 = AudioPlayer('mp3/7.mp3')
-		self.ap8 = AudioPlayer('mp3/8.mp3')
-		self.ap9 = AudioPlayer('mp3/9.mp3')
+		self.ap1 = AudioPlayer('/home/user/Desktop/RPI/mp3/1.mp3')
+		self.ap2 = AudioPlayer('/home/user/Desktop/RPI/mp3/2.mp3')
+		self.ap3 = AudioPlayer('/home/user/Desktop/RPI/mp3/3.mp3')
+		self.ap4 = AudioPlayer('/home/user/Desktop/RPI/mp3/4.mp3')
+		self.ap5 = AudioPlayer('/home/user/Desktop/RPI/mp3/5.mp3')
+		self.ap6 = AudioPlayer('/home/user/Desktop/RPI/mp3/6.mp3')
+		self.ap7 = AudioPlayer('/home/user/Desktop/RPI/mp3/7.mp3')
+		self.ap8 = AudioPlayer('/home/user/Desktop/RPI/mp3/8.mp3')
+		self.ap9 = AudioPlayer('/home/user/Desktop/RPI/mp3/9.mp3')
 
 		self.tracks = [False, False, False,\
 		 False, False, False, False, False, False]

@@ -5,19 +5,37 @@ class PiHandler():
 	def __init__(self):
 		self.initGPIO()
 		self.inputs = {
-			'runQuest': True,
-			'doorRead': True,
-			'bookRead': True,
-			'coinRead': True,
-			'declarationRead': True,
-			'brickRead': True,
-			'handRead': True,
-			'cupRead': True,
-			'tableRead': True,
-			'presidentRead': True,
-			'ringRead': True,
-			'playersRead': True
+			'runQuest': GPIO.input(3),
+			'doorRead': GPIO.input(5),
+			'bookRead': GPIO.input(7),
+			'coinRead': GPIO.input(11),
+			'declarationRead': GPIO.input(13),
+			'brickRead': GPIO.input(15),
+			'handRead': GPIO.input(19),
+			'cupRead': GPIO.input(21),
+			'tableRead': GPIO.input(23),
+			'presidentRead': GPIO.input(29),
+			'ringRead': GPIO.input(31),
+			'playersRead': GPIO.input(33)
 		}
+
+	@staticmethod
+	def get_inputs():
+		inputs = {
+			'runQuest': not GPIO.input(3),
+			'doorRead': not GPIO.input(5),	
+			'bookRead': not GPIO.input(7),
+			'coinRead': not GPIO.input(11),
+			'declarationRead': not GPIO.input(13),
+			'brickRead': not GPIO.input(15),
+			'handRead': not GPIO.input(19),
+			'cupRead': not GPIO.input(21),
+			'tableRead': not GPIO.input(23),
+			'presidentRead': not GPIO.input(29),
+			'ringRead': not GPIO.input(31),
+			'playersRead': not GPIO.input(33)
+		}
+		return inputs
 
 	def sensors_loop(self):
 		while True:
@@ -242,4 +260,4 @@ class PiHandler():
 		pass
 	def playersRead0(self):
 		pass
-	
+
