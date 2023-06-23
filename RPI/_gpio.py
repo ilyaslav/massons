@@ -24,16 +24,16 @@ class PiHandler():
 		inputs = {
 			'runQuest': not GPIO.input(3),
 			'doorRead': not GPIO.input(5),	
-			'bookRead': not GPIO.input(7),
-			'coinRead': not GPIO.input(11),
-			'declarationRead': not GPIO.input(13),
-			'brickRead': not GPIO.input(15),
-			'handRead': not GPIO.input(19),
-			'cupRead': not GPIO.input(21),
-			'tableRead': not GPIO.input(23),
-			'presidentRead': not GPIO.input(29),
-			'ringRead': not GPIO.input(31),
-			'playersRead': not GPIO.input(33)
+			'bookRead': GPIO.input(7),
+			'coinRead': GPIO.input(11),
+			'declarationRead': GPIO.input(13),
+			'brickRead': GPIO.input(15),
+			'handRead': GPIO.input(19),
+			'cupRead': GPIO.input(21),
+			'tableRead': GPIO.input(23),
+			'presidentRead': GPIO.input(29),
+			'ringRead': GPIO.input(31),
+			'playersRead': GPIO.input(33)
 		}
 		return inputs
 
@@ -57,72 +57,72 @@ class PiHandler():
 				if GPIO.input(7) != self.inputs['bookRead']:
 					self.inputs['bookRead'] = GPIO.input(7)
 					if self.inputs['bookRead']:
-						self.bookRead0()
-					else:
 						self.bookRead1()
+					else:
+						self.bookRead0()
 
 				if GPIO.input(11) != self.inputs['coinRead']:
 					self.inputs['coinRead'] = GPIO.input(11)
 					if self.inputs['coinRead']:
-						self.coinRead0()
-					else:
 						self.coinRead1()
+					else:
+						self.coinRead0()
 
 				if GPIO.input(13) != self.inputs['declarationRead']:
 					self.inputs['declarationRead'] = GPIO.input(13)
 					if self.inputs['declarationRead']:
-						self.declarationRead0()
-					else:
 						self.declarationRead1()
+					else:
+						self.declarationRead0()
 
 				if GPIO.input(15) != self.inputs['brickRead']:
 					self.inputs['brickRead'] = GPIO.input(15)
 					if self.inputs['brickRead']:
-						self.brickRead0()
-					else:
 						self.brickRead1()
+					else:
+						self.brickRead0()
 
 				if GPIO.input(19) != self.inputs['handRead']:
 					self.inputs['handRead'] = GPIO.input(19)
 					if self.inputs['handRead']:
-						self.handRead0()
-					else:
 						self.handRead1()
+					else:
+						self.handRead0()
 
 				if GPIO.input(21) != self.inputs['cupRead']:
 					self.inputs['cupRead'] = GPIO.input(21)
 					if self.inputs['cupRead']:
-						self.cupRead0()
-					else:
 						self.cupRead1()
+					else:
+						self.cupRead0()
 
 				if GPIO.input(23) != self.inputs['tableRead']:
 					self.inputs['tableRead'] = GPIO.input(23)
 					if self.inputs['tableRead']:
-						self.tableRead0()
-					else:
 						self.tableRead1()
+					else:
+						self.tableRead0()
 
 				if GPIO.input(29) != self.inputs['presidentRead']:
 					self.inputs['presidentRead'] = GPIO.input(29)
 					if self.inputs['presidentRead']:
-						self.presidentRead0()
-					else:
 						self.presidentRead1()
+					else:
+						self.presidentRead0()
 
 				if GPIO.input(31) != self.inputs['ringRead']:
 					self.inputs['ringRead'] = GPIO.input(31)
 					if self.inputs['ringRead']:
-						self.ringRead0()
-					else:
 						self.ringRead1()
+					else:
+						self.ringRead0()
 
 				if GPIO.input(33) != self.inputs['playersRead']:
 					self.inputs['playersRead'] = GPIO.input(33)
 					if self.inputs['playersRead']:
-						self.playersRead0()
-					else:
 						self.playersRead1()
+					else:
+						self.playersRead0()
 
 				time.sleep(0.1)
 			except:
@@ -133,16 +133,16 @@ class PiHandler():
 
 		GPIO.setup(3, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 		GPIO.setup(5, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-		GPIO.setup(7, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-		GPIO.setup(11, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-		GPIO.setup(13, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-		GPIO.setup(15, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-		GPIO.setup(19, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-		GPIO.setup(21, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-		GPIO.setup(23, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-		GPIO.setup(29, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-		GPIO.setup(31, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-		GPIO.setup(33, GPIO.IN, pull_up_down = GPIO.PUD_UP)
+		GPIO.setup(7, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+		GPIO.setup(11, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+		GPIO.setup(13, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+		GPIO.setup(15, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+		GPIO.setup(19, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+		GPIO.setup(21, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+		GPIO.setup(23, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+		GPIO.setup(29, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+		GPIO.setup(31, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+		GPIO.setup(33, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 		GPIO.setup(8, GPIO.OUT, initial=GPIO.HIGH)
 		GPIO.setup(10, GPIO.OUT, initial=GPIO.LOW)
